@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,7 +87,7 @@
       background: transparent; border: 1px solid rgba(247,243,237,0.3);
       color: var(--warm-white); padding: 0.6rem 1.8rem;
       font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em;
-      text-transform: uppercase; cursor: pointer;
+      text-transform: uppercase; cursor: pointer; text-decoration: none;
       transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     }
     .nav-cta:hover {
@@ -159,7 +158,7 @@
       background: var(--warm-white); color: var(--ink);
       padding: 1rem 2.5rem; font-size: 0.75rem; font-weight: 500;
       letter-spacing: 0.15em; text-transform: uppercase; border: none;
-      cursor: pointer; transition: all 0.4s ease;
+      cursor: pointer; transition: all 0.4s ease; text-decoration: none; display: inline-block;
     }
     .hero-cta:hover {
       background: var(--gold); transform: translateY(-2px);
@@ -363,7 +362,7 @@
     .slide-quote-btn {
       background: transparent; border: none; color: var(--gold);
       font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
-      cursor: pointer; position: relative; padding-bottom: 2px;
+      cursor: pointer; position: relative; padding-bottom: 2px; text-decoration: none;
     }
     .slide-quote-btn::after {
       content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px;
@@ -531,20 +530,12 @@
       background: var(--warm-white); color: var(--ink);
       padding: 1.1rem 2.8rem; font-size: 0.75rem; font-weight: 500;
       letter-spacing: 0.15em; text-transform: uppercase; border: none;
-      cursor: pointer; transition: all 0.4s ease;
+      cursor: pointer; transition: all 0.4s ease; text-decoration: none;
     }
     .cta-btn-primary:hover {
       background: var(--gold); box-shadow: 0 15px 40px rgba(184,149,106,0.25);
       transform: translateY(-2px);
     }
-    .cta-btn-secondary {
-      background: transparent; color: var(--warm-white);
-      padding: 1.1rem 2.8rem; font-size: 0.75rem; font-weight: 500;
-      letter-spacing: 0.15em; text-transform: uppercase;
-      border: 1px solid rgba(247,243,237,0.15); cursor: pointer;
-      transition: all 0.4s ease;
-    }
-    .cta-btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
 
     /* ===== FOOTER ===== */
     .footer {
@@ -557,6 +548,11 @@
     .footer-brand p {
       font-size: 0.85rem; color: var(--muted); line-height: 1.7; max-width: 320px; margin-bottom: 1.5rem;
     }
+    .footer-contact-info {
+        font-size: 0.85rem; color: var(--taupe); line-height: 1.6; margin-bottom: 1.5rem;
+    }
+    .footer-contact-info strong { color: var(--gold); display: block; margin-bottom: 0.4rem; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;}
+    
     .footer-certs { display: flex; gap: 0.8rem; flex-wrap: wrap; }
     .footer-cert {
       padding: 0.35rem 0.7rem; border: 1px solid rgba(247,243,237,0.08);
@@ -588,80 +584,6 @@
     .reveal-scale { opacity: 0; transform: scale(0.95); transition: all 1s cubic-bezier(0.23, 1, 0.32, 1); }
     .reveal-scale.visible { opacity: 1; transform: scale(1); }
 
-
-    /* ===== INGREDIENTS — 5 PRODUCT LINES ===== */
-    .ing-section { padding: 10rem 3rem; background: var(--charcoal); }
-    .ing-header {
-      max-width: 1400px; margin: 0 auto 4rem;
-      display: flex; justify-content: space-between; align-items: flex-end; gap: 3rem;
-    }
-    .ing-header h2 {
-      font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; max-width: 520px; line-height: 1.1;
-    }
-    .ing-header h2 em { font-style: italic; color: var(--gold); }
-    .ing-header p { color: var(--taupe); font-size: 0.9rem; max-width: 340px; text-align: right; }
-    .ing-grid {
-      max-width: 1400px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.5rem;
-    }
-    .ing-card {
-      position: relative; overflow: hidden; cursor: pointer;
-      background: var(--ink); border: 1px solid rgba(247,243,237,0.06);
-      display: flex; flex-direction: column;
-      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    .ing-card:hover {
-      border-color: rgba(184,149,106,0.25);
-      transform: translateY(-6px);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.4);
-    }
-    .ing-card-img { height: 240px; overflow: hidden; position: relative; }
-    .ing-card-img img {
-      width: 100%; height: 100%; object-fit: cover;
-      filter: grayscale(0.4) brightness(0.65);
-      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    .ing-card:hover .ing-card-img img {
-      filter: grayscale(0) brightness(0.8);
-      transform: scale(1.06);
-    }
-    .ing-card-img::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(180deg, transparent 50%, var(--ink) 100%);
-    }
-    .ing-card-body { padding: 1.8rem; flex: 1; display: flex; flex-direction: column; }
-    .ing-card-num {
-      font-family: 'Cormorant Garamond', serif; font-size: 0.85rem;
-      color: var(--gold); letter-spacing: 0.1em; margin-bottom: 0.8rem;
-    }
-    .ing-card-body h3 { font-size: 1.5rem; font-weight: 400; margin-bottom: 0.6rem; }
-    .ing-card-body > p { font-size: 0.82rem; color: var(--taupe); line-height: 1.65; margin-bottom: 1.2rem; }
-    .ing-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.4rem; }
-    .ing-tag {
-      padding: 0.3rem 0.7rem; border: 1px solid rgba(247,243,237,0.1);
-      font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
-      transition: all 0.3s;
-    }
-    .ing-card:hover .ing-tag { border-color: rgba(184,149,106,0.3); color: var(--taupe); }
-    .ing-card-foot {
-      margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(247,243,237,0.06);
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .ing-card-foot .moq { font-size: 0.7rem; color: var(--muted); }
-    .ing-card-foot .moq strong { color: var(--warm-white); font-weight: 500; }
-    .ing-card:nth-child(1) { grid-column: span 3; }
-    .ing-card:nth-child(2) { grid-column: span 3; }
-    .ing-card:nth-child(3) { grid-column: span 2; }
-    .ing-card:nth-child(4) { grid-column: span 2; }
-    .ing-card:nth-child(5) { grid-column: span 2; }
-
-    /* ===== MARQUEE 2 ===== */
-    .marquee-wrap-2 {
-      border-top: 1px solid rgba(247,243,237,0.08);
-      border-bottom: 1px solid rgba(247,243,237,0.08);
-      padding: 1.2rem 0; overflow: hidden; background: var(--ink);
-    }
-
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
       .hero-content { grid-template-columns: 1fr; }
@@ -676,11 +598,6 @@
       .why-cell:nth-child(2n) { border-right: none; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .case-stats-row { flex-wrap: wrap; gap: 2rem; }
-      .ing-header { flex-direction: column; align-items: flex-start; }
-      .ing-header p { text-align: left; }
-      .ing-grid { grid-template-columns: repeat(2, 1fr); }
-      .ing-card:nth-child(n) { grid-column: span 1; }
-      .ing-card:nth-child(1), .ing-card:nth-child(2) { grid-column: span 2; }
     }
     @media (max-width: 768px) {
       .navbar { padding: 1rem 1.5rem; }
@@ -699,12 +616,8 @@
       .why-cell { border-right: none !important; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
-      .ing-section { padding: 5rem 1.5rem; }
-      .ing-grid { grid-template-columns: 1fr; }
-      .ing-card:nth-child(n) { grid-column: span 1; }
     }
   </style>
-<base target="_blank">
 <base target="_blank">
 </head>
 <body>
@@ -714,13 +627,12 @@
   <div class="logo">MK <span>Shopping</span></div>
   <div class="nav-right">
     <div class="nav-links">
-      <a href="#products">Products</a>
-      <a href="#ingredients">Ingredients</a>
-      <a href="#catering">Catering</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="#products" target="_self">Products</a>
+      <a href="#catering" target="_self">Catering</a>
+      <a href="#about" target="_self">About</a>
+      <a href="#contact" target="_self">Contact</a>
     </div>
-    <button class="nav-cta">Request Quote</button>
+    <a href="mailto:manvirkarel@gmail.com?subject=Request%20a%20quote" class="nav-cta">Request Quote</a>
   </div>
 </nav>
 
@@ -736,8 +648,8 @@
       <h1>Tableware that <em>elevates</em> every experience</h1>
       <p class="hero-desc">Glassware, cutlery, dinnerware, and full-service catering for hotels, restaurants, and event venues. Wholesale since 2008.</p>
       <div class="hero-cta-group">
-        <button class="hero-cta">Browse Catalog</button>
-        <a href="#" class="hero-link">
+        <a href="#products" class="hero-cta" target="_self">Browse Catalog</a>
+        <a href="mailto:manvirkarel@gmail.com?subject=Request%20a%20quote" class="hero-link">
           Request Sample Kit
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
         </a>
@@ -801,7 +713,7 @@
         <div class="cat-item-num">01</div>
         <h3>Glassware</h3>
         <p>Lead-free crystal stemware, tumblers, and carafes. Hand-blown rims, tempered durability, dishwasher-safe.</p>
-        <a href="#" class="cat-item-link">
+        <a href="mailto:manvirkarel@gmail.com?subject=Request%20a%20quote" class="cat-item-link">
           Explore Collection
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.2"/></svg>
         </a>
@@ -814,7 +726,7 @@
         <div class="cat-item-num">02</div>
         <h3>Cutlery</h3>
         <p>18/10 stainless steel in mirror and matte finishes. Custom engraving for branded dining.</p>
-        <a href="#" class="cat-item-link">
+        <a href="mailto:manvirkarel@gmail.com?subject=Request%20a%20quote" class="cat-item-link">
           Explore Collection
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.2"/></svg>
         </a>
@@ -827,7 +739,7 @@
         <div class="cat-item-num">03</div>
         <h3>Dinnerware</h3>
         <p>Porcelain, stoneware, and melamine. Oven-safe, chip-resistant, built for commercial kitchens.</p>
-        <a href="#" class="cat-item-link">
+        <a href="mailto:manvirkarel@gmail.com?subject=Request%20a%20quote" class="cat-item-link">
           Explore Collection
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.2"/></svg>
         </a>
@@ -853,7 +765,7 @@
         <p class="spec">Lead-free crystal &middot; 580ml &middot; Hand-blown rim</p>
         <div class="product-slide-meta">
           <span class="moq">MOQ: <strong>48 pcs</strong></span>
-          <button class="slide-quote-btn">Add to Quote</button>
+          <a href="mailto:manvirkarel@gmail.com?subject=Request%20a%20quote" class="slide-quote-btn">Add to Quote</a>
         </div>
       </div>
     </div>
@@ -867,7 +779,7 @@
         <p class="spec">Mirror finish &middot; 4-piece place setting &middot; 3.5mm gauge</p>
         <div class="product-slide-meta">
           <span class="moq">MOQ: <strong>50 sets</strong></span>
-          <button class="slide-quote-btn">Add to Quote</button>
+          <a href="mailto:manvirkarel@gmail.com?subject=Request%20a%20quote" class="slide-quote-btn">Add to Quote</a>
         </div>
       </div>
     </div>
@@ -881,7 +793,7 @@
         <p class="spec">Bone china &middot; 28cm dinner &middot; Oven &amp; dishwasher safe</p>
         <div class="product-slide-meta">
           <span class="moq">MOQ: <strong>100 pcs</strong></span>
-          <button class="slide-quote-btn">Add to Quote</button>
+          <a href="mailto:manvirkarel@gmail.com?subject=Request%20a%20quote" class="slide-quote-btn">Add to Quote</a>
         </div>
       </div>
     </div>
@@ -895,7 +807,7 @@
         <p class="spec">Heavy base crystal &middot; 320ml &middot; Weighted feel</p>
         <div class="product-slide-meta">
           <span class="moq">MOQ: <strong>72 pcs</strong></span>
-          <button class="slide-quote-btn">Add to Quote</button>
+          <a href="mailto:manvirkarel@gmail.com?subject=Request%20a%20quote" class="slide-quote-btn">Add to Quote</a>
         </div>
       </div>
     </div>
@@ -909,7 +821,7 @@
         <p class="spec">Reactive glaze stoneware &middot; 30cm &middot; Unique patterns</p>
         <div class="product-slide-meta">
           <span class="moq">MOQ: <strong>24 pcs</strong></span>
-          <button class="slide-quote-btn">Add to Quote</button>
+          <a href="mailto:manvirkarel@gmail.com?subject=Request%20a%20quote" class="slide-quote-btn">Add to Quote</a>
         </div>
       </div>
     </div>
@@ -923,148 +835,12 @@
         <p class="spec">Tall stem &middot; 180ml &middot; Laser-cut rim</p>
         <div class="product-slide-meta">
           <span class="moq">MOQ: <strong>60 pcs</strong></span>
-          <button class="slide-quote-btn">Add to Quote</button>
+          <a href="mailto:manvirkarel@gmail.com?subject=Request%20a%20quote" class="slide-quote-btn">Add to Quote</a>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-
-<!-- INGREDIENTS & SUPPLIES -->
-<section class="ing-section" id="ingredients">
-  <div class="ing-header reveal">
-    <h2>Ingredients &amp; <em> Kitchen Essentials</em></h2>
-    <p>High-turnover pantry staples for bakeries, QSRs, cloud kitchens and restaurants. Consistent quality, bulk pricing, repeat-supply programs.</p>
-  </div>
-  <div class="ing-grid">
-    <div class="ing-card reveal">
-      <div class="ing-card-img">
-        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=900&q=80" alt="Food flavours — vanilla, chocolate, strawberry">
-      </div>
-      <div class="ing-card-body">
-        <div class="ing-card-num">01</div>
-        <h3>Food Flavours</h3>
-        <p>Concentrated flavours for beverages, desserts, bakery and ice cream. A proven repeat-purchase line your kitchen will reorder month after month.</p>
-        <div class="ing-tags">
-          <span class="ing-tag">Vanilla</span>
-          <span class="ing-tag">Chocolate</span>
-          <span class="ing-tag">Strawberry</span>
-          <span class="ing-tag">Butterscotch</span>
-          <span class="ing-tag">Mango</span>
-        </div>
-        <div class="ing-card-foot">
-          <span class="moq">MOQ: <strong>12 bottles</strong></span>
-          <button class="slide-quote-btn">Add to Quote</button>
-        </div>
-      </div>
-    </div>
-    <div class="ing-card reveal">
-      <div class="ing-card-img">
-        <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=900&q=80" alt="Food colours — liquid and powder">
-      </div>
-      <div class="ing-card-body">
-        <div class="ing-card-num">02</div>
-        <h3>Food Colours</h3>
-        <p>Liquid and powder colours in bakery-standard shades. Low unit cost, easy to store, and one of the most frequently reordered items we supply.</p>
-        <div class="ing-tags">
-          <span class="ing-tag">Liquid</span>
-          <span class="ing-tag">Powder</span>
-          <span class="ing-tag">Bakery Range</span>
-          <span class="ing-tag">High Strength</span>
-        </div>
-        <div class="ing-card-foot">
-          <span class="moq">MOQ: <strong>24 units</strong></span>
-          <button class="slide-quote-btn">Add to Quote</button>
-        </div>
-      </div>
-    </div>
-    <div class="ing-card reveal">
-      <div class="ing-card-img">
-        <img src="https://images.unsplash.com/photo-1472476443507-c7a5948772fc?w=700&q=80" alt="Mayonnaise range">
-      </div>
-      <div class="ing-card-body">
-        <div class="ing-card-num">03</div>
-        <h3>Mayonnaise</h3>
-        <p>High-consumption spread for burgers, sandwiches, wraps, rolls and fast food. Especially attractive for QSR and cloud-kitchen customers.</p>
-        <div class="ing-tags">
-          <span class="ing-tag">Regular</span>
-          <span class="ing-tag">Eggless</span>
-          <span class="ing-tag">Peri-Peri</span>
-          <span class="ing-tag">Garlic</span>
-        </div>
-        <div class="ing-card-foot">
-          <span class="moq">MOQ: <strong>10 kg</strong></span>
-          <button class="slide-quote-btn">Add to Quote</button>
-        </div>
-      </div>
-    </div>
-    <div class="ing-card reveal">
-      <div class="ing-card-img">
-        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=700&q=80" alt="Seasoning blends">
-      </div>
-      <div class="ing-card-body">
-        <div class="ing-card-num">04</div>
-        <h3>Seasoning Blends</h3>
-        <p>Ready-made blends restaurants rely on for consistency — used continuously across menus, every single service.</p>
-        <div class="ing-tags">
-          <span class="ing-tag">Peri-Peri</span>
-          <span class="ing-tag">Pizza</span>
-          <span class="ing-tag">BBQ</span>
-          <span class="ing-tag">Fries</span>
-          <span class="ing-tag">Tandoori</span>
-        </div>
-        <div class="ing-card-foot">
-          <span class="moq">MOQ: <strong>5 kg</strong></span>
-          <button class="slide-quote-btn">Add to Quote</button>
-        </div>
-      </div>
-    </div>
-    <div class="ing-card reveal">
-      <div class="ing-card-img">
-        <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=700&q=80" alt="Bakery premixes">
-      </div>
-      <div class="ing-card-body">
-        <div class="ing-card-num">05</div>
-        <h3>Bakery Premixes</h3>
-        <p>Saves preparation time and standardizes output across outlets — cake, brownie, waffle, pancake and muffin bases.</p>
-        <div class="ing-tags">
-          <span class="ing-tag">Cake</span>
-          <span class="ing-tag">Brownie</span>
-          <span class="ing-tag">Waffle</span>
-          <span class="ing-tag">Pancake</span>
-          <span class="ing-tag">Muffin</span>
-        </div>
-        <div class="ing-card-foot">
-          <span class="moq">MOQ: <strong>10 kg</strong></span>
-          <button class="slide-quote-btn">Add to Quote</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MARQUEE 2 -->
-<div class="marquee-wrap-2">
-  <div class="marquee">
-    <span class="marquee-item">Food Flavours</span>
-    <span class="marquee-item">Food Colours</span>
-    <span class="marquee-item">Mayonnaise Range</span>
-    <span class="marquee-item">Seasoning Blends</span>
-    <span class="marquee-item">Bakery Premixes</span>
-    <span class="marquee-item">Bulk Pricing</span>
-    <span class="marquee-item">Repeat-Supply Programs</span>
-    <span class="marquee-item">QSR &amp; Cloud Kitchen Ready</span>
-    <span class="marquee-item">Food Flavours</span>
-    <span class="marquee-item">Food Colours</span>
-    <span class="marquee-item">Mayonnaise Range</span>
-    <span class="marquee-item">Seasoning Blends</span>
-    <span class="marquee-item">Bakery Premixes</span>
-    <span class="marquee-item">Bulk Pricing</span>
-    <span class="marquee-item">Repeat-Supply Programs</span>
-    <span class="marquee-item">QSR &amp; Cloud Kitchen Ready</span>
-  </div>
-</div>
 
 <!-- CATERING -->
 <section class="catering-section" id="catering">
@@ -1186,8 +962,7 @@
   <h2 class="reveal">Ready to outfit <em>your venue</em>?</h2>
   <p class="reveal">Get a custom quote within 24 hours. Our team will review your requirements and recommend the right products at the right price.</p>
   <div class="cta-btns reveal">
-    <button class="cta-btn-primary">Request a Quote</button>
-    <button class="cta-btn-secondary">Download Catalog</button>
+    <a href="mailto:manvirkarel@gmail.com?subject=Request%20a%20quote" class="cta-btn-primary">Request a Quote</a>
   </div>
 </section>
 
@@ -1197,6 +972,15 @@
     <div class="footer-brand">
       <div class="logo">MK <span>Shopping</span></div>
       <p>Premium tableware, glassware, cutlery, and catering solutions for hotels, restaurants, and event venues. Wholesale only.</p>
+      
+      <div class="footer-contact-info">
+        <strong>Headquarters</strong>
+        B1, SCO 54-55, SECTOR 9D, Sector 9,<br>
+        Chandigarh, Chandigarh, 160009<br><br>
+        <strong>Direct Line</strong>
+        +91 9915214555
+      </div>
+
       <div class="footer-certs">
         <span class="footer-cert">NSF</span>
         <span class="footer-cert">ISO 9001</span>
@@ -1206,32 +990,27 @@
     </div>
     <div class="footer-col">
       <h5>Products</h5>
-      <a href="#">Glassware</a>
-      <a href="#">Cutlery</a>
-      <a href="#">Dinnerware</a>
-      <a href="#">Catering Equipment</a>
-      <a href="#ingredients">Food Flavours</a>
-      <a href="#ingredients">Food Colours</a>
-      <a href="#ingredients">Mayonnaise</a>
-      <a href="#ingredients">Seasoning Blends</a>
-      <a href="#ingredients">Bakery Premixes</a>
-      <a href="#">Custom Branding</a>
+      <a href="mailto:manvirkarel@gmail.com?subject=Product%20Inquiry">Glassware</a>
+      <a href="mailto:manvirkarel@gmail.com?subject=Product%20Inquiry">Cutlery</a>
+      <a href="mailto:manvirkarel@gmail.com?subject=Product%20Inquiry">Dinnerware</a>
+      <a href="mailto:manvirkarel@gmail.com?subject=Product%20Inquiry">Catering Equipment</a>
+      <a href="mailto:manvirkarel@gmail.com?subject=Product%20Inquiry">Custom Branding</a>
     </div>
     <div class="footer-col">
       <h5>Services</h5>
-      <a href="#">Drop-Off Catering</a>
-      <a href="#">Full-Service Events</a>
-      <a href="#">Menu Design</a>
-      <a href="#">Equipment Rental</a>
-      <a href="#">Sample Program</a>
+      <a href="#catering" target="_self">Drop-Off Catering</a>
+      <a href="#catering" target="_self">Full-Service Events</a>
+      <a href="#catering" target="_self">Menu Design</a>
+      <a href="#catering" target="_self">Equipment Rental</a>
+      <a href="mailto:manvirkarel@gmail.com?subject=Sample%20Program">Sample Program</a>
     </div>
     <div class="footer-col">
       <h5>Company</h5>
-      <a href="#">About Us</a>
-      <a href="#">Case Studies</a>
-      <a href="#">Careers</a>
-      <a href="#">Contact</a>
-      <a href="#">Privacy Policy</a>
+      <a href="#about" target="_self">About Us</a>
+      <a href="#" target="_self">Case Studies</a>
+      <a href="#" target="_self">Careers</a>
+      <a href="mailto:manvirkarel@gmail.com?subject=Contact%20Inquiry">Contact</a>
+      <a href="#" target="_self">Privacy Policy</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -1259,12 +1038,20 @@
 
   document.querySelectorAll('.reveal, .reveal-left, .reveal-scale').forEach(el => observer.observe(el));
 
-  // Smooth scroll
+  // Smooth scroll for all anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === "#") return;
+      
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const target = document.querySelector(targetId);
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 80, // Offset for fixed navbar
+          behavior: 'smooth'
+        });
+      }
     });
   });
 
